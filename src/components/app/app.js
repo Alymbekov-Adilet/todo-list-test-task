@@ -4,9 +4,36 @@ import SearchPanel from "../search-panel";
 import TodoList from "../todo-list";
 import ItemAddForm from "../item-add-form";
 import ItemStatusFilter from "../item-status-filter";
-import {BrowserRouter as Router} from 'react-router-dom'
+import ErrorButton from "../error-button";
+
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import "./app.scss";
+import img from "./list.jpg";
+
+const View = () => {
+  return (
+    <div className="box-app">
+      <Router>
+        <div className="box-appheader d-flex">
+          <Link to="/arrow">
+            <h3 className="mr-5">
+              <i className="fa fa-arrow-right"></i>
+            </h3>
+          </Link>
+          <Route path="/" exact render={() => <h2>Welcome to my-app</h2>} />
+        </div>
+
+        <Route path="/arrow" component={App} />
+        <Route path="/" exact>
+          <img src={img} alt="todo-img"></img>
+        </Route>
+      </Router>
+    </div>
+  );
+};
+
+export default View;
 
 class App extends Component {
   //genraitor id;
@@ -124,38 +151,44 @@ class App extends Component {
     }
   }
 
+  onError = () => {
+    this.setState({ error: true });
+  };
+  
+
+
   render() {
     const { data, filter, term } = this.state;
     const visibleItems = this.filter(this.search(data, term), filter);
-
     const doneCount = data.filter((el) => el.done).length;
     const toDoCount = data.length - doneCount;
+
+    
+
     return (
-      <Router>
-        <div className="box-app">
-          <div className="box-appheader">
-            <AppHeader todo={toDoCount} done={doneCount} />
-          </div>
-          <div className="todo-app ">
-            <div className="d-flex">
-              <SearchPanel onSearchChange={this.onSearchChange} />
-              <ItemStatusFilter
-                filter={filter}
-                onFilterChange={this.onFilterChange}
-              />
-            </div>
-            <TodoList
-              data={visibleItems}
-              onToggleDone={this.onToggleDone}
-              onToggleImportant={this.onToggleImportant}
-              onDelete={this.onDelete}
+      // <div className="box-app">
+      <div className="box">
+        <AppHeader todo={toDoCount} done={doneCount} />
+
+        <div className="todo-app">
+          <div className="d-flex ">
+            <SearchPanel onSearchChange={this.onSearchChange} />
+            <ItemStatusFilter
+              filter={filter}
+              onFilterChange={this.onFilterChange}
             />
-            <Router ItemAddForm onAdd={this.onAdd} />
           </div>
+          <TodoList
+            data={visibleItems}
+            onToggleDone={this.onToggleDone}
+            onToggleImportant={this.onToggleImportant}
+            onDelete={this.onDelete}
+            onError={this.onError}
+          />
+          <ItemAddForm onAdd={this.onAdd}/>
+
         </div>
-      </Router>
+      </div>
     );
   }
 }
-
-export default App;

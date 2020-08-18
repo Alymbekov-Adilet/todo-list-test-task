@@ -1,8 +1,12 @@
 import React, { Component } from "react";
-
+import ErrorButton from "../error-button";
 import "./todo-list-item.scss";
 
 class TodoListItem extends Component {
+  state = {
+    error: false,
+  };
+
   render() {
     const {
       label,

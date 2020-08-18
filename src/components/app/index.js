@@ -1,3 +1,3 @@
-import App from "./app";
+import View from "./app";
 
-export default App;
+export default View;

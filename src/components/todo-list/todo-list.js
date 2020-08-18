@@ -3,7 +3,12 @@ import TodoListItem from "../todo-list-item";
 
 import "./todo-list.scss";
 
-const TodoList = ({ data, onToggleDone, onToggleImportant, onDelete }) => {
+const TodoList = ({
+  data,
+  onToggleDone,
+  onToggleImportant,
+  onDelete,
+}) => {
   const elem = data.map((item) => {
     const { id, ...itemProps } = item;
     return (
@@ -17,7 +22,14 @@ const TodoList = ({ data, onToggleDone, onToggleImportant, onDelete }) => {
       </li>
     );
   });
-  return <ul className="list-group ">{elem}</ul>;
+
+  return (
+    <ul className="list-group ">
+      {elem}
+      <span className="d-flex justify-content-end mt-3">
+      </span>
+    </ul>
+  );
 };
 
 export default TodoList;
