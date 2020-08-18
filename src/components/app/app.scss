@@ -1,0 +1,15 @@
+.box-app {
+  max-width: 40rem;
+  min-height:  50rem;
+  border: 1px solid #6682a9;
+  border-radius: 20px;
+  margin: 2rem auto 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  // position: relative;
+
+  .todo-app {
+    width: 80%;
+    margin: 4rem auto 0 auto;
+  }
+}

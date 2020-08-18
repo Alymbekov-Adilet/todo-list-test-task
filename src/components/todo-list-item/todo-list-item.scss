@@ -1,0 +1,22 @@
+.todo-list {
+  margin-top: 20px;
+  border-bottom: 1px solid #138496;
+
+  .todo-list-item-label {
+    font-size: 1.25rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .done {
+    text-decoration: line-through;
+  }
+
+  .important {
+    color: #138496;
+    font-weight: bold;
+    font-size: 1.4375rem;
+
+  }
+}
