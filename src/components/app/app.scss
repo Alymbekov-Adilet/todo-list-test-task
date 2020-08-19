@@ -1,15 +1,43 @@
 .box-app {
-  max-width: 40rem;
-  min-height: 50rem;
-  border: 1px solid #6682a9;
+  max-width: 37rem;
+  min-height: 43rem;
+  border: 1px solid #138496;
   border-radius: 20px;
   margin: 2rem auto 0 auto;
   background-color: #ffffff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  // display: none;
+  @media (max-width: 1024px) {
+    max-width: 50rem;
+    min-height: 61rem;
+  }
+  @media (max-width: 768px) {
+    max-width: 39rem;
+    min-height: 47rem;
+  }
 
-  img{
+  @media (max-width: 700px) {
+    max-width: 30rem;
+    min-height: 35rem;
+  }
+
+  @media (max-width: 450px) {
+    max-width: 25rem;
+  }
+
+  @media (max-width: 320px) {
+    min-height: 30rem;
+  }
+
+  img {
     width: 100%;
     height: 100%;
+    @media (max-width: 700px) {
+      height: 450px;
+    }
+    @media (max-width: 320px) {
+      height: 370px;
+    }
   }
   // position: relative;
   .box-appheader {
@@ -21,18 +49,64 @@
       padding-top: 0.65rem;
       margin-left: 5rem;
 
-     
+      @media (max-width: 1024px) {
+        font-size: 35px;
+        margin-left: 10rem;
+      }
+      @media (max-width: 768px) {
+        font-size: 35px;
+        margin-left: 5rem;
+      }
+      @media (max-width: 700px) {
+        margin-left: 1rem;
+      }
+      @media (max-width: 450px) {
+        font-size: 30px;
+        margin-left: -15px;
+      }
+      @media (max-width: 375px) {
+        margin-left: -25px;
+      }
+
+      @media (max-width: 350px) {
+        font-size: 17px;
+        margin-top: 7px;
+      }
+      @media (max-width: 320px) {
+        font-size: 27px;
+        margin-left: -29px;
+        margin-top: 3px;
+
+      }
+      @media (max-width: 310px) {
+        font-size: 17px;
+        margin-top: 7px;
+      }
+      @media (max-width: 280px) {
+        font-size: 23px;
+        margin-top: 3px;
+      }
+      @media (max-width: 270px) {
+        font-size: 17px;
+        margin-top: 7px;
       }
     }
-    h3{
-      padding-top: 0.68rem;
-      font-size: 30px;
+  }
+  h3 {
+    padding-top: 0.68rem;
+    font-size: 30px;
+    color: #ffffff;
+    i {
       color: #ffffff;
-      i {
-        color: #ffffff;
-        &:hover {
-          color: aqua;
-        }
+      &:hover {
+        color: aqua;
+      }
+      @media (max-width: 700px) {
+        font-size: 25px;
+      }
+    }
+    @media (max-width: 320px) {
+      padding-top: 7px;
     }
   }
 }
@@ -42,5 +116,17 @@
   .todo-app {
     width: 80%;
     margin: 4rem auto 0 auto;
+  }
+  .box-searchPanel-itemStatusFilter {
+    display: flex;
+
+    @media (max-width: 320px) {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 280px) {
+    margin-top: -83px;
   }
 }

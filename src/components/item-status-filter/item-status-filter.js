@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "./item-status-filter";
+import "./item-status-filter.scss";
 
 class ItemStatusFilter extends Component {
   buttons = [
@@ -18,7 +18,7 @@ class ItemStatusFilter extends Component {
         <button
           key={name}
           type="button"
-          className={`btn ${clazz}`}
+          className={`btn ${clazz} `}
           onClick={() => onFilterChange(name)}
         >
           {label}
@@ -26,7 +26,7 @@ class ItemStatusFilter extends Component {
       );
     });
 
-    return <div className="item-status-filter btn-group  ">{buttons}</div>;
+    return <div className="item-status-filter btn-group">{buttons}</div>;
   }
 }
 

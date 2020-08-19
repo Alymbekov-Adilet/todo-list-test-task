@@ -4,7 +4,6 @@ import SearchPanel from "../search-panel";
 import TodoList from "../todo-list";
 import ItemAddForm from "../item-add-form";
 import ItemStatusFilter from "../item-status-filter";
-import ErrorButton from "../error-button";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -171,7 +170,7 @@ class App extends Component {
         <AppHeader todo={toDoCount} done={doneCount} />
 
         <div className="todo-app">
-          <div className="d-flex ">
+          <div className="box-searchPanel-itemStatusFilter">
             <SearchPanel onSearchChange={this.onSearchChange} />
             <ItemStatusFilter
               filter={filter}

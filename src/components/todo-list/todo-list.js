@@ -26,8 +26,7 @@ const TodoList = ({
   return (
     <ul className="list-group ">
       {elem}
-      <span className="d-flex justify-content-end mt-3">
-      </span>
+      
     </ul>
   );
 };

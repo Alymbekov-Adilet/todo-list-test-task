@@ -12,9 +12,32 @@
     &:hover{
       color: aqua;
     }
+    @media (max-width: 700px){
+      font-size: 35px;
+      margin-top: 4px
+    }
+
+    @media(max-width: 450px){
+    font-size: 30px;
+     margin-left: 20px;
+    }
+    @media(max-width: 280px){
+      font-size: 23px;
+    }
   }
   h2 {
     font-size: 1.5rem;
     color: #ffffff;
+    @media (max-width: 700px){
+      font-size: 20px;
+    }
+
+    @media(max-width: 450px){
+      font-size: 17px;
+    }
+
+    @media(max-width: 280px){
+      font-size: 13px;
+    }
   }
 }

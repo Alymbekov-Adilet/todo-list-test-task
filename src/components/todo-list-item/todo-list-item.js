@@ -1,10 +1,13 @@
 import React, { Component } from "react";
-import ErrorButton from "../error-button";
 import "./todo-list-item.scss";
 
 class TodoListItem extends Component {
   state = {
     error: false,
+  };
+
+  onError = () => {
+    this.setState({ error: true });
   };
 
   render() {
@@ -26,6 +29,10 @@ class TodoListItem extends Component {
       classNames += " important";
     }
 
+    if (this.state.error) {
+      return <span>Something goes wrong!</span>;
+    }
+
     return (
       <span className="todo-list ">
         <span className={classNames} onClick={onToggleImportant}>
@@ -34,7 +41,15 @@ class TodoListItem extends Component {
 
         <button
           type="button"
-          className="btn btn-outline-danger btn-sm float-right"
+          className="btn btn-warning btn-sm float-right"
+          onClick={this.onError}
+        >
+          <i className="fa fa-warning"></i>
+        </button>
+
+        <button
+          type="button"
+          className="btn btn-outline-danger btn-sm float-right mr-1"
           onClick={onDelete}
         >
           <i className="fa fa-trash-o" />
