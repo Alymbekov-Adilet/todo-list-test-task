@@ -30,6 +30,7 @@ class ItemAddForm extends Component {
           placeholder="What needs to be done"
           onChange={this.onLabelChange}
           value={this.state.label}
+          required={true}
         />
 
         <button className="btn btn-info ml-2 ">Add</button>
